@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { cn } from "../lib/utils";
+import { ActiveLink } from "./ActiveLink";
 
 const links = [
   { label: "Home", href: "/" },
@@ -15,66 +14,67 @@ const links = [
 ];
 
 export function Navbar() {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const isActive = (href: string) => {
-    if (href === "/") {
-      return pathname === href;
-    }
-    return pathname?.startsWith(href.replace(/#.*/, ""));
-  };
+  const closeMenu = () => setOpen(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 text-sm uppercase tracking-[0.3em]">
-        <Link href="/" className="text-white">
-          COURTIER
-        </Link>
-        <div className="hidden items-center gap-8 text-xs text-white md:flex">
+        <ActiveLink href="/" className="text-white after:hidden">COURTIER</ActiveLink>
+        <div className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "transition hover:text-white",
-                isActive(link.href) ? "text-white" : "text-white/60"
-              )}
-            >
+            <ActiveLink key={link.href} href={link.href}>
               {link.label}
-            </Link>
+            </ActiveLink>
           ))}
         </div>
         <button
-          className="text-white md:hidden"
+          className="text-white lg:hidden"
           onClick={() => setOpen(true)}
           aria-label="Open navigation"
         >
-          <span className="block h-0.5 w-6 bg-white"></span>
-          <span className="mt-1 block h-0.5 w-6 bg-white"></span>
+          <span className="block h-0.5 w-7 bg-white" />
+          <span className="mt-1 block h-0.5 w-7 bg-white" />
         </button>
       </nav>
-      {open && (
-        <div className="fixed inset-0 z-40 bg-black/95 px-6 py-10 text-white md:hidden">
-          <div className="flex items-center justify-between">
-            <span className="text-sm uppercase tracking-[0.3em]">COURTIER</span>
-            <button
-              aria-label="Close navigation"
-              onClick={() => setOpen(false)}
-              className="text-white"
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/95 text-white lg:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1, transition: { delay: 0.05 } }}
+              exit={{ y: -20, opacity: 0 }}
+              className="flex h-full flex-col px-6 py-10"
             >
-              Close
-            </button>
-          </div>
-          <div className="mt-12 flex flex-col gap-6 text-2xl">
-            {links.map((link) => (
-              <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+              <div className="flex items-center justify-between">
+                <span className="text-sm uppercase tracking-[0.3em]">COURTIER</span>
+                <button aria-label="Close navigation" onClick={closeMenu} className="text-white/80">
+                  ✕
+                </button>
+              </div>
+              <div className="mt-12 flex flex-1 flex-col gap-8 text-2xl">
+                {links.map((link) => (
+                  <ActiveLink
+                    key={link.href}
+                    href={link.href}
+                    className="text-2xl tracking-[0.2em]"
+                    onClick={closeMenu}
+                  >
+                    {link.label}
+                  </ActiveLink>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
