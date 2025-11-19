@@ -1,13 +1,18 @@
-# Courtier
+# COURTIER
 
-Minimal Next.js (App Router + TypeScript) landing page for Courtier.
+Luxury marketing site for **COURTIER – Indoor Padel & Leisure Club** built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
-## Prerequisites
+## Site Structure
 
-- Node.js 18.17+ (recommended via [nvm](https://github.com/nvm-sh/nvm))
-- npm 9+
+| Route | Description |
+| ----- | ----------- |
+| `/` | Hero-driven home with club overview, experience highlights, and founding membership teaser. |
+| `/membership` | Membership tiers, benefits, and registration form. |
+| `/padel` | Details on courts, coaching, clinics, and events with an updates form. |
+| `/club` | Overview of the gym, recovery, and social spaces. |
+| `/about` | Story, philosophy, future vision, and founder placeholders. |
 
-## Getting started
+## Getting Started
 
 1. Install dependencies:
 
@@ -21,13 +26,8 @@ Minimal Next.js (App Router + TypeScript) landing page for Courtier.
    npm run dev
    ```
 
-   The site is available at [http://localhost:3000](http://localhost:3000).
+   Visit [http://localhost:3000](http://localhost:3000) to view the site.
 
 ## Deployment
 
-Deploy directly to [Vercel](https://vercel.com/import):
-
-1. Push this repository to GitHub.
-2. In Vercel, import the repo and select the default settings (framework **Next.js**).
-3. Set the build command to `npm run build` and the output directory to `.next` (default).
-4. Each push to the selected branch will trigger a new deployment automatically.
+Optimised for deployment on [Vercel](https://vercel.com/). No environment variables are required at this stage.
