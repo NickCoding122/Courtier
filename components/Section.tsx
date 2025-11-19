@@ -1,19 +1,19 @@
 "use client";
 
-import { HTMLAttributes, ReactNode } from "react";
-import { motion } from "framer-motion";
+import { ReactNode } from "react";
+import { motion, type Variants, type HTMLMotionProps } from "framer-motion";
 import { cn } from "../lib/utils";
 
-const variants = {
+const variants: Variants = {
   initial: { opacity: 0, y: 24 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
 };
 
-type SectionProps = HTMLAttributes<HTMLElement> & {
+type SectionProps = HTMLMotionProps<"section"> & {
   children: ReactNode;
 };
 
