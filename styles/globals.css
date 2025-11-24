@@ -28,6 +28,14 @@ body {
   line-height: 1.6;
 }
 
+h1,
+h2,
+h3,
+.font-extended {
+  font-family: var(--font-aktiv-extended), var(--font-aktiv-regular), "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+
 a {
   text-decoration: none;
 }
