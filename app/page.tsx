@@ -2,34 +2,16 @@ import { Button } from "../components/Button";
 import { CourtierImage } from "../components/CourtierImage";
 import { courtierImages } from "../lib/images";
 
-const galleryImages = [
-  courtierImages.heroCourtAction,
-  courtierImages.indoorCourt,
-  courtierImages.roundelSignage,
-];
-
-const craftImages = [
-  courtierImages.merchBottle,
-  courtierImages.merchCap,
-  courtierImages.merchTote,
-  courtierImages.merchHoodie,
-  courtierImages.padelRacketRoundel,
-];
-
 export default function HomePage() {
   return (
     <div className="bg-courtier text-white">
       <section className="px-6 pb-10 pt-16">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.45em] text-muted">Indoor Padel & Leisure Club</p>
-            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-              Luxury, monochrome padel set within design-led, climate-controlled courts.
-            </h1>
-            <p className="max-w-xl text-lg text-muted">
-              Courtier blends precision sport with crafted hospitality. Expect cinematic courts, discreet service, and an
-              intimate membership that values space to play and room to breathe.
-            </p>
+            <p className="text-sm tracking-widest uppercase text-courtier-ash">Indoor Padel & Leisure Club</p>
+            <h1 className="text-5xl font-extended tracking-tight">Luxury monochrome padel.</h1>
+            <h2 className="text-3xl font-extended tracking-tight mt-2">Design-led. Climate-controlled.</h2>
+            <p className="text-courtier-ash mt-4 max-w-md">Precision sport meets crafted hospitality.</p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button href="/membership#register">Join the list</Button>
               <Button href="/padel" variant="ghost">
@@ -49,50 +31,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-soft bg-courtier px-6 py-14">
-        <div className="mx-auto max-w-6xl space-y-8">
-          <div className="flex items-baseline justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-muted">Monochrome signatures</p>
-              <h2 className="mt-3 text-2xl font-semibold">Spaces composed with negative space and light</h2>
-            </div>
-            <span className="text-sm text-muted">Gallery</span>
+      <section className="px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 md:grid-cols-3 my-12">
+            <CourtierImage
+              src="/images/courtier/courtier-hero-court-action.png"
+              alt="Action shot"
+              width={1587}
+              height={656}
+            />
+            <CourtierImage
+              src="/images/courtier/courtier-indoor-court.png"
+              alt="Indoor court"
+              width={1670}
+              height={1044}
+            />
+            <CourtierImage
+              src="/images/courtier/courtier-roundel-signage.png"
+              alt="Roundel signage"
+              width={776}
+              height={837}
+            />
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {galleryImages.map((image) => (
-              <CourtierImage
-                key={image.src}
-                src={image.src}
-                width={image.width}
-                height={image.height}
-                alt={image.alt}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-soft bg-courtier px-6 py-16">
-        <div className="mx-auto max-w-6xl space-y-10">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-muted">Craft & Detail</p>
-              <h2 className="mt-3 text-2xl font-semibold">Objects and apparel, refined for the Courtier member</h2>
-            </div>
-            <p className="max-w-md text-sm text-muted">
-              A monochrome collection with tactile finishes, engineered for on- and off-court rituals.
-            </p>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {craftImages.map((image) => (
-              <CourtierImage
-                key={image.src}
-                src={image.src}
-                width={image.width}
-                height={image.height}
-                alt={image.alt}
-              />
-            ))}
+          <div className="border-t border-soft py-10 text-sm text-muted">
+            <a href="/club#craft" className="underline-offset-4 hover:underline">
+              Discover our craft and detail collection →
+            </a>
           </div>
         </div>
       </section>

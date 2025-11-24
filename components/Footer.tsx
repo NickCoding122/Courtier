@@ -21,7 +21,6 @@ export function Footer() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 md:flex-row md:items-start md:justify-between">
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-[0.4em] text-white">COURTIER</p>
-          <p className="text-sm text-muted">Indoor Padel & Leisure Club</p>
         </div>
         <div className="flex flex-1 flex-col gap-2 text-xs uppercase tracking-[0.3em] text-muted md:flex-row md:justify-end md:gap-8">
           <ActiveLink href="/membership" className="text-xs text-muted after:h-0" accent={false}>

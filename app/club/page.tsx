@@ -1,6 +1,14 @@
 import { CourtierImage } from "../../components/CourtierImage";
 import { courtierImages } from "../../lib/images";
 
+const craftImages = [
+  courtierImages.merchBottle,
+  courtierImages.merchCap,
+  courtierImages.merchTote,
+  courtierImages.merchHoodie,
+  courtierImages.padelRacketRoundel,
+];
+
 export default function ClubPage() {
   return (
     <main className="max-w-6xl mx-auto px-6 py-16 space-y-16">
@@ -42,6 +50,29 @@ export default function ClubPage() {
           Members' lounge with bar, work-friendly salons, and soundtracked evenings. Programming spans chef residencies, design
           conversations, screenings, and curated travel.
         </p>
+      </section>
+
+      <section id="craft" className="space-y-10">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted">Craft & Detail</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Objects and apparel, refined for the Courtier member</h2>
+          </div>
+          <p className="max-w-md text-sm text-muted">
+            A monochrome collection with tactile finishes, engineered for on- and off-court rituals.
+          </p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {craftImages.map((image) => (
+            <CourtierImage
+              key={image.src}
+              src={image.src}
+              width={image.width}
+              height={image.height}
+              alt={image.alt}
+            />
+          ))}
+        </div>
       </section>
     </main>
   );
