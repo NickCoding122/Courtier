@@ -9,12 +9,25 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-space-grotesk)", "Space Grotesk", "system-ui", "sans-serif"],
+      },
       colors: {
         "courtier-off-black": "var(--courtier-off-black)",
         "courtier-anthracite": "var(--courtier-anthracite)",
         "courtier-ash": "var(--courtier-ash)",
         "courtier-silver": "var(--courtier-silver)",
         "courtier-white": "var(--courtier-white)",
+      },
+      backgroundColor: {
+        courtier: "var(--courtier-off-black)",
+        "courtier-panel": "var(--courtier-anthracite)",
+      },
+      textColor: {
+        muted: "var(--courtier-ash)",
+      },
+      borderColor: {
+        soft: "rgba(196,196,196,0.24)",
       },
       keyframes: {
         "courtier-fade-in": {

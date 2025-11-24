@@ -1,44 +1,48 @@
-import { Section } from "../../components/Section";
+import { CourtierImage } from "../../components/CourtierImage";
+import { courtierImages } from "../../lib/images";
 
 export default function ClubPage() {
   return (
-    <div className="bg-black text-white">
-      <Section className="border-b border-white/10 text-center">
-        <p className="text-4xl tracking-[0.5em]">The Club</p>
-        <p className="mt-6 text-lg leading-relaxed text-white/80">
+    <main className="max-w-6xl mx-auto px-6 py-16 space-y-16">
+      <CourtierImage
+        src={courtierImages.roundelSignage.src}
+        width={courtierImages.roundelSignage.width}
+        height={courtierImages.roundelSignage.height}
+        alt={courtierImages.roundelSignage.alt}
+        caption="Refined signage and wayfinding guide members through the space."
+      />
+
+      <section className="space-y-4">
+        <p className="text-xs uppercase tracking-[0.4em] text-muted">The Club</p>
+        <h1 className="text-3xl font-semibold">A residence-like club for performance and pause</h1>
+        <p className="text-lg text-muted">
           Gym, recovery, lounge, and concierge experiences designed like a private residence.
         </p>
-      </Section>
+      </section>
 
-      <Section className="border-b border-white/10">
-        <div className="space-y-4 text-lg leading-relaxed text-white/80">
-          <p className="text-sm uppercase tracking-[0.4em] text-white/60">Gym & Training</p>
-          <p>
-            Strength, conditioning, and mobility suites with bespoke equipment, private coaching pods, and data-led
-            programming. Expect Olympic lifting platforms, reformer pilates, and sprint lanes framed by gallery lighting.
-          </p>
-        </div>
-      </Section>
+      <section className="space-y-5 text-muted">
+        <p className="text-xs uppercase tracking-[0.35em] text-muted">Gym & Training</p>
+        <p>
+          Strength, conditioning, and mobility suites with bespoke equipment, private coaching pods, and data-led programming.
+          Expect Olympic lifting platforms, reformer pilates, and sprint lanes framed by gallery lighting.
+        </p>
+      </section>
 
-      <Section className="border-b border-white/10">
-        <div className="space-y-4 text-lg leading-relaxed text-white/80">
-          <p className="text-sm uppercase tracking-[0.4em] text-white/60">Recovery</p>
-          <p>
-            Thermal circuits with saunas, cold plunges, infrared suites, and treatment rooms for massage and physio. Soft
-            lighting, stone finishes, and fragrance cues make recovery a ritual rather than a routine.
-          </p>
-        </div>
-      </Section>
+      <section className="space-y-5 text-muted">
+        <p className="text-xs uppercase tracking-[0.35em] text-muted">Recovery</p>
+        <p>
+          Thermal circuits with saunas, cold plunges, infrared suites, and treatment rooms for massage and physio. Soft lighting,
+          stone finishes, and fragrance cues make recovery a ritual rather than a routine.
+        </p>
+      </section>
 
-      <Section className="border-b border-white/10">
-        <div className="space-y-4 text-lg leading-relaxed text-white/80">
-          <p className="text-sm uppercase tracking-[0.4em] text-white/60">Lounge & Social</p>
-          <p>
-            Members' lounge with bar, work-friendly salons, and soundtracked evenings. Programming spans chef residencies,
-            design conversations, screenings, and curated travel.
-          </p>
-        </div>
-      </Section>
-    </div>
+      <section className="space-y-5 text-muted">
+        <p className="text-xs uppercase tracking-[0.35em] text-muted">Lounge & Social</p>
+        <p>
+          Members' lounge with bar, work-friendly salons, and soundtracked evenings. Programming spans chef residencies, design
+          conversations, screenings, and curated travel.
+        </p>
+      </section>
+    </main>
   );
 }

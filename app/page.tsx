@@ -1,129 +1,101 @@
 import { Button } from "../components/Button";
-import { Card } from "../components/Card";
-import { Section } from "../components/Section";
+import { CourtierImage } from "../components/CourtierImage";
+import { courtierImages } from "../lib/images";
 
-const highlights = [
-  "Indoor climate-controlled courts",
-  "Performance gym & conditioning",
-  "Recovery spa and therapies",
-  "Members' lounge & bar",
-  "Elite coaching & concierge",
+const galleryImages = [
+  courtierImages.heroCourtAction,
+  courtierImages.indoorCourt,
+  courtierImages.roundelSignage,
 ];
 
-const experiences = [
-  {
-    title: "Padel",
-    copy: "Six indoor courts engineered for precision play with pro-level glass, lighting, and courtside service.",
-  },
-  {
-    title: "Training",
-    copy: "Strength labs, coaching, and data-led programming for players and guests seeking progression.",
-  },
-  {
-    title: "Social",
-    copy: "Members' lounge, bar, and curated calendar of dinners, talks, and invitations beyond the court.",
-  },
+const craftImages = [
+  courtierImages.merchBottle,
+  courtierImages.merchCap,
+  courtierImages.merchTote,
+  courtierImages.merchHoodie,
+  courtierImages.padelRacketRoundel,
 ];
 
 export default function HomePage() {
   return (
-    <div className="bg-black text-white">
-      <Section
-        className="relative isolate flex min-h-[90vh] items-center justify-center overflow-hidden text-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1604754742629-3f0d27b4e9e4?fit=crop&w=1200&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 -z-10 bg-black/65" aria-hidden />
-        <div className="space-y-8">
-          <p className="text-4xl tracking-[0.6em] md:text-6xl">COURTIER</p>
-          <p className="text-sm uppercase tracking-[0.5em] text-white/80">
-            Indoor Padel & Leisure Club
-          </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button href="/membership#register">Register Interest</Button>
-            <Button href="#vision" variant="ghost">
-              View Club Vision
-            </Button>
+    <div className="bg-courtier text-white">
+      <section className="px-6 pb-10 pt-16">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="space-y-6">
+            <p className="text-xs uppercase tracking-[0.45em] text-muted">Indoor Padel & Leisure Club</p>
+            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
+              Luxury, monochrome padel set within design-led, climate-controlled courts.
+            </h1>
+            <p className="max-w-xl text-lg text-muted">
+              Courtier blends precision sport with crafted hospitality. Expect cinematic courts, discreet service, and an
+              intimate membership that values space to play and room to breathe.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button href="/membership#register">Join the list</Button>
+              <Button href="/padel" variant="ghost">
+                Explore padel
+              </Button>
+            </div>
+          </div>
+          <div className="lg:pl-6">
+            <CourtierImage
+              src={courtierImages.heroRacket.src}
+              width={courtierImages.heroRacket.width}
+              height={courtierImages.heroRacket.height}
+              alt={courtierImages.heroRacket.alt}
+              caption="Precision-engineered padel equipment, crafted exclusively for Courtier."
+            />
           </div>
         </div>
-      </Section>
+      </section>
 
-      <Section id="vision" className="border-t border-white/10">
-        <div className="grid gap-12 md:grid-cols-2">
-          <div className="space-y-4 text-lg text-white/80">
-            <p className="text-sm uppercase tracking-[0.4em] text-white/60">
-              What is COURTIER?
-            </p>
-            <p className="leading-relaxed">
-              COURTIER is a modern interpretation of the padel club — an indoor flagship for those who expect precision in
-              sport and refinement in hospitality.
-            </p>
-            <p className="leading-relaxed">
-              Every detail is curated: climate-controlled courts, bespoke locker rooms, recovery suites, and a lounge that
-              feels closer to a design gallery than a gym.
-            </p>
-            <p className="leading-relaxed">
-              Membership is limited to preserve atmosphere and access, forming a community united by performance, culture,
-              and a shared pace of life.
-            </p>
+      <section className="border-t border-soft bg-courtier px-6 py-14">
+        <div className="mx-auto max-w-6xl space-y-8">
+          <div className="flex items-baseline justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.4em] text-muted">Monochrome signatures</p>
+              <h2 className="mt-3 text-2xl font-semibold">Spaces composed with negative space and light</h2>
+            </div>
+            <span className="text-sm text-muted">Gallery</span>
           </div>
-          <div className="rounded-sm border border-white/15 p-6">
-            <ul className="space-y-3 text-lg text-[#CCCCCC]">
-              {highlights.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-2 h-0.5 w-6 bg-[#C9B37E]"></span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      <Section className="border-t border-white/10">
-        <div className="space-y-8">
-          <p className="text-sm uppercase tracking-[0.4em] text-white/60">Club Experience</p>
           <div className="grid gap-6 md:grid-cols-3">
-            {experiences.map((experience) => (
-              <Card key={experience.title} title={experience.title}>
-                {experience.copy}
-              </Card>
+            {galleryImages.map((image) => (
+              <CourtierImage
+                key={image.src}
+                src={image.src}
+                width={image.width}
+                height={image.height}
+                alt={image.alt}
+              />
             ))}
           </div>
         </div>
-      </Section>
+      </section>
 
-      <Section className="border-t border-white/10">
-        <div className="grid gap-10 md:grid-cols-2">
-          <div className="space-y-4 text-lg leading-relaxed text-white/80">
-            <p className="text-sm uppercase tracking-[0.4em] text-white/60">
-              Founding Memberships
+      <section className="border-t border-soft bg-courtier px-6 py-16">
+        <div className="mx-auto max-w-6xl space-y-10">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.4em] text-muted">Craft & Detail</p>
+              <h2 className="mt-3 text-2xl font-semibold">Objects and apparel, refined for the Courtier member</h2>
+            </div>
+            <p className="max-w-md text-sm text-muted">
+              A monochrome collection with tactile finishes, engineered for on- and off-court rituals.
             </p>
-            <p>
-              Early members receive priority booking, dedicated concierge services, and curated invitations while we
-              complete the flagship.
-            </p>
-            <p className="text-[#CCCCCC]">
-              Limited founding memberships will define culture, operations, and the programme of the club.
-            </p>
-            <Button href="/membership#register" variant="outline">
-              Join Founding List
-            </Button>
           </div>
-          <div className="space-y-4 text-lg leading-relaxed text-white/80">
-            <p className="text-sm uppercase tracking-[0.4em] text-white/60">Location & Vision</p>
-            <p>First flagship planned for South-East London. Additional city and resort destinations to follow.</p>
-            <p>
-              COURTIER blends sport, wellness, and social culture — every site will be a considered extension of the
-              founding space.
-            </p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {craftImages.map((image) => (
+              <CourtierImage
+                key={image.src}
+                src={image.src}
+                width={image.width}
+                height={image.height}
+                alt={image.alt}
+              />
+            ))}
           </div>
         </div>
-      </Section>
+      </section>
     </div>
   );
 }

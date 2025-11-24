@@ -19,10 +19,10 @@ export function Navbar() {
   const closeMenu = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 text-sm uppercase tracking-[0.3em]">
+    <header className="sticky top-0 z-50 border-b border-soft bg-courtier backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 text-[11px] uppercase tracking-[0.35em]">
         <ActiveLink href="/" className="text-white after:hidden">COURTIER</ActiveLink>
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-10 lg:flex">
           {links.map((link) => (
             <ActiveLink key={link.href} href={link.href}>
               {link.label}
@@ -42,7 +42,7 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-50 bg-black/95 text-white lg:hidden"
+            className="fixed inset-0 z-50 bg-courtier text-white lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
