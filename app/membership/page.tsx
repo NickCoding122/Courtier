@@ -1,68 +1,40 @@
 import { Card } from "../../components/Card";
 import { MembershipForm } from "../../components/MembershipForm";
-import { CourtierImage } from "../../components/CourtierImage";
-import { courtierImages } from "../../lib/images";
 
 const tiers = [
   {
-    title: "Player",
+    title: "PLAYER",
     price: "From £200 / month",
-    benefits: [
-      "Unlimited off-peak padel access",
-      "Member match-making",
-      "Performance programming",
-      "Guest passes each month",
-      "Locker & amenities",
-    ],
+    benefits: ["Off-peak court access", "Match-making", "Locker & amenities"],
   },
   {
-    title: "Club",
+    title: "CLUB",
     price: "From £300 / month",
-    benefits: [
-      "Anytime court booking",
-      "Gym & training floor access",
-      "Recovery suite privileges",
-      "Priority event invitations",
-      "Concierge booking",
-      "Complimentary racquet storage",
-    ],
+    benefits: ["Anytime court booking", "Gym & training floor", "Concierge booking"],
   },
   {
-    title: "Founding",
+    title: "FOUNDING",
     price: "From £450 / month",
-    benefits: [
-      "Earliest booking windows",
-      "Private host & concierge",
-      "Guest lounge invitations",
-      "Annual retreat access",
-      "Custom coaching plan",
-      "Legacy pricing guarantee",
-    ],
+    benefits: ["Earliest booking windows", "Private host", "Legacy pricing assurance"],
   },
 ];
 
 export default function MembershipPage() {
   return (
-    <main className="max-w-6xl mx-auto px-6 py-16 space-y-16">
-      <CourtierImage
-        src={courtierImages.heroCourtAction.src}
-        width={courtierImages.heroCourtAction.width}
-        height={courtierImages.heroCourtAction.height}
-        alt={courtierImages.heroCourtAction.alt}
-        caption="Movement captured in monochrome; the rhythm of play defines the Courtier experience."
-      />
-
-      <section className="space-y-4">
-        <p className="text-xs uppercase tracking-[0.4em] text-muted">Membership at Courtier</p>
-        <h1 className="text-3xl font-semibold">Curated access for those who value space and precision</h1>
+    <main className="mx-auto max-w-6xl px-6 py-16 space-y-16">
+      <section className="space-y-4 text-center md:text-left">
+        <p className="text-xs uppercase tracking-[0.4em] text-muted">MEMBERSHIP AT COURTIER</p>
+        <h1 className="text-3xl font-semibold text-white">
+          Curated access for those who value space and precision.
+        </h1>
         <p className="text-lg text-muted">
-          Membership is curated, limited, and for those who value refined environments as much as competitive play.
+          Membership is limited and shaped around people who care how their club feels, not just where they play.
         </p>
       </section>
 
       <section className="grid gap-6 md:grid-cols-3">
         {tiers.map((tier) => (
-          <Card key={tier.title} title={tier.title} className="backdrop-blur">
+          <Card key={tier.title} title={tier.title} className="backdrop-blur text-white">
             <div className="space-y-4">
               <p className="text-xl text-white">{tier.price}</p>
               <ul className="space-y-2 text-base text-muted">
@@ -79,12 +51,9 @@ export default function MembershipPage() {
       </section>
 
       <section className="grid gap-10 md:grid-cols-2" id="register">
-        <div className="space-y-4 text-muted">
+        <div className="space-y-3 text-muted">
           <p className="text-xs uppercase tracking-[0.35em] text-muted">Register Interest</p>
-          <p>
-            Tell us about your interest in Courtier. Our membership team will follow up with availability and a private preview
-            of the club experience.
-          </p>
+          <p>Share your details and we’ll follow up with availability and a private preview of the club.</p>
         </div>
         <MembershipForm />
       </section>

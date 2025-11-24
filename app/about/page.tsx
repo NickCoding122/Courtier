@@ -1,8 +1,19 @@
 import { Card } from "../../components/Card";
-import { CourtierImage } from "../../components/CourtierImage";
-import { courtierImages } from "../../lib/images";
 
-const principles = ["Performance First", "Design-Led Spaces", "Curated Community"];
+const principles = [
+  {
+    title: "Performance first",
+    copy: "Courts, coaching and programming built around measurable progress.",
+  },
+  {
+    title: "Design-led spaces",
+    copy: "Monochrome interiors, calm lighting and generous negative space.",
+  },
+  {
+    title: "Curated community",
+    copy: "Limited membership to keep the club focused and familiar.",
+  },
+];
 
 const founders = [
   { name: "Alexandra Court", role: "Founder & Creative Director" },
@@ -12,49 +23,31 @@ const founders = [
 
 export default function AboutPage() {
   return (
-    <main className="max-w-6xl mx-auto px-6 py-16 space-y-16">
-      <CourtierImage
-        src={courtierImages.heroRacket.src}
-        width={courtierImages.heroRacket.width}
-        height={courtierImages.heroRacket.height}
-        alt={courtierImages.heroRacket.alt}
-        caption="A monochrome emblem of performance and craft that anchors the Courtier aesthetic."
-      />
-
+    <main className="mx-auto max-w-6xl px-6 py-16 space-y-14">
       <section className="space-y-4">
-        <p className="text-xs uppercase tracking-[0.4em] text-muted">About Courtier</p>
-        <h1 className="text-3xl font-semibold">A new house for padel that pairs performance with design</h1>
+        <p className="text-xs uppercase tracking-[0.4em] text-muted">ABOUT COURTIER</p>
+        <h1 className="text-3xl font-semibold text-white">A new house for padel that pairs performance with design.</h1>
         <p className="text-lg text-muted">
-          A new house for padel that pairs performance with design, craft, and community.
+          Courtier is built for people who care how a club feels as much as how it plays. We pair precise indoor courts with
+          design-led spaces, so every visit feels edited, not busy.
         </p>
       </section>
 
       <section className="space-y-4 text-muted">
-        <p className="text-xs uppercase tracking-[0.35em] text-muted">Story</p>
-        <p>
-          Courtier was born from equal parts obsession with padel and a desire for environments that feel as considered as the
-          sport itself. We set out to design a club where energy, architecture, and service are choreographed.
-        </p>
-      </section>
-
-      <section className="space-y-4">
-        <p className="text-xs uppercase tracking-[0.35em] text-muted">Philosophy</p>
-        <ul className="mt-3 space-y-3 text-lg text-muted">
+        <p className="text-xs uppercase tracking-[0.35em] text-muted">Principles</p>
+        <div className="space-y-3">
           {principles.map((principle) => (
-            <li key={principle} className="flex items-center gap-3">
-              <span className="h-px w-8 bg-white/50"></span>
-              <span>{principle}</span>
-            </li>
+            <div key={principle.title} className="space-y-1">
+              <p className="text-lg font-semibold text-white">{principle.title}</p>
+              <p className="text-base text-muted">{principle.copy}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
-      <section className="space-y-4 text-muted">
+      <section className="space-y-3 text-muted">
         <p className="text-xs uppercase tracking-[0.35em] text-muted">Future</p>
-        <p>
-          After launching the flagship in South-East London, Courtier will scale to other European cities and resort destinations,
-          each with its own expression but the same meticulous feel.
-        </p>
+        <p>After the first club in South-East London, Courtier will grow slowly into other cities and resort destinations.</p>
       </section>
 
       <section className="space-y-6">
@@ -63,7 +56,6 @@ export default function AboutPage() {
           {founders.map((founder) => (
             <Card key={founder.name} title={founder.name}>
               <p className="text-base text-white">{founder.role}</p>
-              <p className="mt-4 text-sm text-muted">Biography coming soon.</p>
             </Card>
           ))}
         </div>

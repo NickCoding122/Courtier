@@ -1,64 +1,35 @@
-import { CourtsOverview } from "../../components/CourtsOverview";
 import { UpdatesForm } from "../../components/UpdatesForm";
-import { CourtierImage } from "../../components/CourtierImage";
-import { courtierImages } from "../../lib/images";
+
+const features = [
+  { title: "Courts", copy: "High-spec flooring, tuned lighting, gallery viewing." },
+  { title: "Coaching", copy: "One-to-one sessions focused on progress, not just sweat." },
+  { title: "Clinics", copy: "Small group clinics for tactical awareness and creativity." },
+  { title: "Events", copy: "Leagues, invitation-only evenings and collaborations with chefs and designers." },
+];
 
 export default function PadelPage() {
   return (
-    <main className="max-w-6xl mx-auto px-6 py-16 space-y-16">
-      <CourtierImage
-        src={courtierImages.indoorCourt.src}
-        width={courtierImages.indoorCourt.width}
-        height={courtierImages.indoorCourt.height}
-        alt={courtierImages.indoorCourt.alt}
-        caption="Climate-controlled interiors, tuned lighting, and gallery sightlines across every court."
-      />
-
+    <main className="mx-auto max-w-6xl px-6 py-16 space-y-14">
       <section className="space-y-4">
-        <p className="text-xs uppercase tracking-[0.4em] text-muted">Padel at Courtier</p>
-        <h1 className="text-3xl font-semibold">Cinematic courts engineered for precision play</h1>
+        <p className="text-xs uppercase tracking-[0.4em] text-muted">PADEL AT COURTIER</p>
+        <h1 className="text-3xl font-semibold text-white">Cinematic indoor courts engineered for precision play.</h1>
         <p className="text-lg text-muted">
-          Indoor courts engineered for consistency, hosted by a team of coaches, technicians, and concierges.
+          Six climate-controlled courts with consistent bounce, clear sightlines and quiet acoustics.
         </p>
       </section>
 
-      <section className="grid gap-10 md:grid-cols-2 md:items-start">
-        <div className="space-y-4 text-muted">
-          <p className="text-xs uppercase tracking-[0.35em] text-muted">Courts</p>
-          <p>
-            High-spec flooring, acoustic treatments, and gallery-style lighting ensure the game feels cinematic every session.
-            Courts are climate-controlled with curated spectator spots and discreet service bells.
-          </p>
-        </div>
-        <CourtsOverview />
+      <section className="grid gap-6 sm:grid-cols-2">
+        {features.map((feature) => (
+          <div key={feature.title} className="space-y-2 rounded-sm border border-white/15 bg-white/5 p-4">
+            <p className="text-base font-semibold text-white">{feature.title}</p>
+            <p className="text-sm text-muted">{feature.copy}</p>
+          </div>
+        ))}
       </section>
 
-      <section className="grid gap-10 md:grid-cols-3">
+      <section className="grid gap-8 md:grid-cols-2 md:items-start">
         <div className="space-y-3 text-muted">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-muted">Private Coaching</p>
-          <p>
-            One-to-one performance coaching and video analysis delivered by international-level coaches.
-          </p>
-        </div>
-        <div className="space-y-3 text-muted">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-muted">Clinics</p>
-          <p>Group clinics for beginners to advanced players, emphasising tactical awareness and creativity.</p>
-        </div>
-        <div className="space-y-3 text-muted">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-muted">Training Blocks</p>
-          <p>
-            Multi-week programmes combining padel, conditioning, and recovery sessions for measurable progress.
-          </p>
-        </div>
-      </section>
-
-      <section className="grid gap-10 md:grid-cols-2">
-        <div className="space-y-4 text-muted">
-          <p className="text-xs uppercase tracking-[0.35em] text-muted">Events</p>
-          <p>
-            From social nights and curated doubles to invitation-only leagues and flagship tournaments, Courtier keeps the calendar alive.
-          </p>
-          <p>Expect collaborations with chefs, designers, and other clubs to evolve padel beyond the court.</p>
+          <p className="text-sm font-semibold tracking-[0.05em] text-muted">Stay updated as courts and programmes open.</p>
         </div>
         <UpdatesForm />
       </section>
