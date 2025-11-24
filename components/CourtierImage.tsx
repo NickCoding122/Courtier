@@ -8,6 +8,7 @@ type CourtierImageProps = {
   height: number;
   caption?: string;
   className?: string;
+  imageClassName?: string;
   priority?: boolean;
   quality?: number;
 };
@@ -19,6 +20,7 @@ export function CourtierImage({
   height,
   caption,
   className,
+  imageClassName,
   priority,
   quality = 94,
 }: CourtierImageProps) {
@@ -39,7 +41,7 @@ export function CourtierImage({
           priority={priority}
           quality={quality}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 600px"
-          className="h-auto w-full animate-courtier-fade-in object-cover"
+          className={cn("h-auto w-full animate-courtier-fade-in object-cover", imageClassName)}
         />
       </div>
       {caption ? (

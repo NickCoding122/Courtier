@@ -12,7 +12,7 @@ export function Card({ title, children, cta, className }: CardProps) {
   return (
     <div
       className={cn(
-        "flex h-full flex-col gap-4 border border-white/15 bg-white/5 p-6 text-white transition hover:border-white/40 hover:bg-white/10",
+        "flex h-full flex-col gap-4 rounded-xl border border-white/15 bg-white/5 p-6 text-white transition duration-300 hover:border-white/40 hover:bg-white/10",
         className
       )}
     >

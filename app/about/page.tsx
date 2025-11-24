@@ -12,29 +12,24 @@ const founders = [
 
 export default function AboutPage() {
   return (
-    <main className="max-w-6xl mx-auto px-6 py-16 space-y-16">
+    <main className="mx-auto max-w-6xl space-y-16 px-6 py-16">
       <CourtierImage
-        src={courtierImages.heroRacket.src}
-        width={courtierImages.heroRacket.width}
-        height={courtierImages.heroRacket.height}
-        alt={courtierImages.heroRacket.alt}
+        src={courtierImages.padelRacketRoundel.src}
+        width={courtierImages.padelRacketRoundel.width}
+        height={courtierImages.padelRacketRoundel.height}
+        alt={courtierImages.padelRacketRoundel.alt}
         caption="A monochrome emblem of performance and craft that anchors the Courtier aesthetic."
       />
 
       <section className="space-y-4">
         <p className="text-xs uppercase tracking-[0.4em] text-muted">About Courtier</p>
-        <h1 className="text-3xl font-semibold">A new house for padel that pairs performance with design</h1>
-        <p className="text-lg text-muted">
-          A new house for padel that pairs performance with design, craft, and community.
-        </p>
+        <h1 className="font-extended text-5xl font-semibold leading-tight">A new house for padel that pairs performance with design.</h1>
+        <p className="max-w-3xl text-base text-muted">Every detail is edited for clarity—from the architecture to the programming.</p>
       </section>
 
       <section className="space-y-4 text-muted">
         <p className="text-xs uppercase tracking-[0.35em] text-muted">Story</p>
-        <p>
-          Courtier was born from equal parts obsession with padel and a desire for environments that feel as considered as the
-          sport itself. We set out to design a club where energy, architecture, and service are choreographed.
-        </p>
+        <p>Born from equal parts obsession with padel and design, the club choreographs energy, architecture, and service.</p>
       </section>
 
       <section className="space-y-4">
@@ -51,10 +46,7 @@ export default function AboutPage() {
 
       <section className="space-y-4 text-muted">
         <p className="text-xs uppercase tracking-[0.35em] text-muted">Future</p>
-        <p>
-          After launching the flagship in South-East London, Courtier will scale to other European cities and resort destinations,
-          each with its own expression but the same meticulous feel.
-        </p>
+        <p>Flagship first, then considered expansions to other cities—each with its own expression but the same meticulous feel.</p>
       </section>
 
       <section className="space-y-6">

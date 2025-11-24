@@ -38,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${aktivExtended.variable} ${aktivRegular.variable}`}>
-      <body className={`${aktivRegular.className} bg-[#0E0E0E] text-white antialiased`}>
+      <body className="bg-[#0E0E0E] text-white antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -5,14 +5,13 @@ import { courtierImages } from "../lib/images";
 export default function HomePage() {
   return (
     <div className="bg-[#0E0E0E] text-white">
-      <section className="px-6 pb-14 pt-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-6">
             <p className="text-xs uppercase tracking-[0.35em] text-gray-400">Courtier / London</p>
-            <h1 className="font-extended text-5xl font-semibold leading-tight sm:text-6xl">Indoor padel, distilled.</h1>
-            <p className="max-w-xl text-lg text-gray-400">
-              Calm, cinematic courts paired with concierge-level hospitality. We strip away clutter so the experience stays
-              precise.
+            <h1 className="font-extended text-5xl font-semibold leading-tight">Indoor padel, distilled.</h1>
+            <p className="max-w-xl text-base text-gray-300">
+              Calm courts, concierge hospitality. We strip away clutter so the experience stays precise.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button href="/membership#register">Join the list</Button>
@@ -21,8 +20,8 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
-              {["Climate-controlled courts", "Concierge booking", "Design-first social spaces"].map((item) => (
-                <div key={item} className="border border-white/15 bg-white/5 p-4 text-sm text-gray-300">
+              {["Courts", "Private Coaching", "Lounge & Social"].map((item) => (
+                <div key={item} className="rounded-xl border border-white/15 bg-white/5 p-4 text-sm text-gray-200">
                   {item}
                 </div>
               ))}
@@ -42,34 +41,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-6 pb-16">
-        <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-center">
-          <div className="lg:w-1/2">
-            <CourtierImage
-              src={courtierImages.heroRacket.src}
-              width={courtierImages.heroRacket.width}
-              height={courtierImages.heroRacket.height}
-              alt={courtierImages.heroRacket.alt}
-              caption="Signature equipment engineered with the same precision as our courts."
-              quality={98}
-            />
-          </div>
-          <div className="lg:w-1/2 space-y-6">
-            <p className="text-xs uppercase tracking-[0.35em] text-gray-400">The Courtier read</p>
-            <h2 className="font-extended text-3xl font-semibold leading-tight">Less noise, more clarity.</h2>
-            <p className="text-lg text-gray-400">
-              We focus on what matters: consistent bounce, expert hosts, elevated amenities, and a members-first calendar.
-              Every detail is edited until it feels inevitable.
-            </p>
-            <div className="grid gap-4 md:grid-cols-2">
-              {["Performance coaching with video analysis", "Private lounges and recovery rituals", "Invitation-only match play", "Design-led merchandise you actually want"]
-                .map((item) => (
-                  <div key={item} className="border border-white/15 bg-white/5 p-4 text-sm text-gray-200">
-                    {item}
-                  </div>
-                ))}
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+          {[
+            {
+              title: "Courts",
+              copy: "Cinematic, climate-controlled courts tuned for clean bounce and perfect sightlines.",
+            },
+            {
+              title: "Private Coaching",
+              copy: "Coaches and hosts manage your session from booking to post-play notes.",
+            },
+            {
+              title: "Lounge & Social",
+              copy: "Quiet salons, edited playlists, and programming that keeps the calendar sharp.",
+            },
+          ].map((item) => (
+            <div key={item.title} className="rounded-xl border border-white/15 bg-white/5 p-6 text-gray-200">
+              <p className="text-xs uppercase tracking-[0.35em] text-gray-400">{item.title}</p>
+              <p className="mt-4 text-base leading-relaxed">{item.copy}</p>
             </div>
-          </div>
+          ))}
         </div>
       </section>
     </div>

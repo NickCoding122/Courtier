@@ -43,7 +43,7 @@ const tiers = [
 
 export default function MembershipPage() {
   return (
-    <main className="max-w-6xl mx-auto px-6 py-16 space-y-16">
+    <main className="mx-auto max-w-6xl space-y-16 px-6 py-16">
       <CourtierImage
         src={courtierImages.heroCourtAction.src}
         width={courtierImages.heroCourtAction.width}
@@ -54,15 +54,15 @@ export default function MembershipPage() {
 
       <section className="space-y-4">
         <p className="text-xs uppercase tracking-[0.4em] text-muted">Membership at Courtier</p>
-        <h1 className="text-3xl font-semibold">Curated access for those who value space and precision</h1>
-        <p className="text-lg text-muted">
-          Membership is curated, limited, and for those who value refined environments as much as competitive play.
+        <h1 className="font-extended text-5xl font-semibold leading-tight">Curated access for those who value space and precision.</h1>
+        <p className="max-w-3xl text-base text-muted">
+          Access is intentionally limited. Every tier centres on edited courts, attentive hosts, and space to play without distraction.
         </p>
       </section>
 
       <section className="grid gap-6 md:grid-cols-3">
         {tiers.map((tier) => (
-          <Card key={tier.title} title={tier.title} className="backdrop-blur">
+          <Card key={tier.title} title={tier.title} className="min-h-[260px]">
             <div className="space-y-4">
               <p className="text-xl text-white">{tier.price}</p>
               <ul className="space-y-2 text-base text-muted">
@@ -81,10 +81,7 @@ export default function MembershipPage() {
       <section className="grid gap-10 md:grid-cols-2" id="register">
         <div className="space-y-4 text-muted">
           <p className="text-xs uppercase tracking-[0.35em] text-muted">Register Interest</p>
-          <p>
-            Tell us about your interest in Courtier. Our membership team will follow up with availability and a private preview
-            of the club experience.
-          </p>
+          <p>Share your details and the membership team will follow up with availability and a private preview.</p>
         </div>
         <MembershipForm />
       </section>

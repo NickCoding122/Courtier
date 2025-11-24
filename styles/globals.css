@@ -25,15 +25,26 @@ body {
   background-color: #0e0e0e;
   color: #ffffff;
   font-family: var(--font-aktiv-regular), sans-serif;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 h1,
 h2,
 h3,
 .font-extended {
-  font-family: var(--font-aktiv-extended), var(--font-aktiv-regular), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-aktiv-extended), var(--font-aktiv-regular), sans-serif;
   letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 1.2;
 }
 
 a {
@@ -45,6 +56,6 @@ a {
 }
 
 .courtier-image-caption {
-  font-family: var(--font-aktiv-extended), var(--font-aktiv-regular), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-aktiv-extended), var(--font-aktiv-regular), sans-serif;
   letter-spacing: 0.04em;
 }
