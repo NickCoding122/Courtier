@@ -24,6 +24,8 @@ body {
   min-height: 100vh;
   background-color: var(--courtier-off-black);
   color: var(--courtier-white);
+  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
 }
 
 a {

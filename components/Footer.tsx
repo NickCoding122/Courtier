@@ -17,28 +17,28 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-black px-6 py-12 text-white">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 md:flex-row md:items-start md:justify-between">
-        <div>
-          <p className="text-sm uppercase tracking-[0.3em]">COURTIER</p>
-          <p className="mt-2 text-xs text-white/60">Indoor Padel & Leisure Club</p>
+    <footer className="border-t border-soft bg-courtier px-6 py-14 text-white">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 md:flex-row md:items-start md:justify-between">
+        <div className="space-y-2">
+          <p className="text-xs uppercase tracking-[0.4em] text-white">COURTIER</p>
+          <p className="text-sm text-muted">Indoor Padel & Leisure Club</p>
         </div>
-        <div className="flex flex-1 flex-col gap-2 text-sm text-white/70 md:flex-row md:justify-end md:gap-8">
-          <ActiveLink href="/membership" className="text-sm text-white/70 after:h-0" accent={false}>
+        <div className="flex flex-1 flex-col gap-2 text-xs uppercase tracking-[0.3em] text-muted md:flex-row md:justify-end md:gap-8">
+          <ActiveLink href="/membership" className="text-xs text-muted after:h-0" accent={false}>
             Membership
           </ActiveLink>
-          <ActiveLink href="/padel" className="text-sm text-white/70 after:h-0" accent={false}>
+          <ActiveLink href="/padel" className="text-xs text-muted after:h-0" accent={false}>
             Padel
           </ActiveLink>
-          <ActiveLink href="/club" className="text-sm text-white/70 after:h-0" accent={false}>
+          <ActiveLink href="/club" className="text-xs text-muted after:h-0" accent={false}>
             Club
           </ActiveLink>
-          <ActiveLink href="/about" className="text-sm text-white/70 after:h-0" accent={false}>
+          <ActiveLink href="/about" className="text-xs text-muted after:h-0" accent={false}>
             About
           </ActiveLink>
         </div>
       </div>
-      <div className="mx-auto mt-8 flex w-full max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto mt-10 flex w-full max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <form className="flex w-full max-w-md flex-col gap-3 md:flex-row" onSubmit={handleSubmit}>
           <FormField
             label="Email for updates"
@@ -48,7 +48,7 @@ export function Footer() {
           <div className="flex items-end">
             <button
               type="submit"
-              className="w-full rounded-sm border border-white px-4 py-3 text-xs uppercase tracking-[0.3em] transition hover:border-[#C9B37E] hover:text-[#C9B37E] md:w-auto"
+              className="w-full rounded-sm border border-soft px-4 py-3 text-[11px] uppercase tracking-[0.35em] transition hover:border-white hover:text-white md:w-auto"
             >
               Submit
             </button>
@@ -60,13 +60,13 @@ export function Footer() {
               initial={{ opacity: 0, y: -4 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -4 }}
-              className="text-sm text-[#C9B37E]"
+              className="text-sm text-white"
             >
               Thank you. We will share the latest club updates with you.
             </motion.p>
           )}
         </AnimatePresence>
-        <p className="text-xs text-white/50">© {new Date().getFullYear()} COURTIER. All rights reserved.</p>
+        <p className="text-xs text-muted">© {new Date().getFullYear()} COURTIER. All rights reserved.</p>
       </div>
     </footer>
   );

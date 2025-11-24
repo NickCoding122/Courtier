@@ -1,6 +1,7 @@
 import { Card } from "../../components/Card";
 import { MembershipForm } from "../../components/MembershipForm";
-import { Section } from "../../components/Section";
+import { CourtierImage } from "../../components/CourtierImage";
+import { courtierImages } from "../../lib/images";
 
 const tiers = [
   {
@@ -42,46 +43,51 @@ const tiers = [
 
 export default function MembershipPage() {
   return (
-    <div className="bg-black text-white">
-      <Section className="border-b border-white/10 text-center">
-        <p className="text-4xl tracking-[0.5em]">Membership at COURTIER</p>
-        <p className="mt-6 text-lg leading-relaxed text-white/80">
+    <main className="max-w-6xl mx-auto px-6 py-16 space-y-16">
+      <CourtierImage
+        src={courtierImages.heroCourtAction.src}
+        width={courtierImages.heroCourtAction.width}
+        height={courtierImages.heroCourtAction.height}
+        alt={courtierImages.heroCourtAction.alt}
+        caption="Movement captured in monochrome; the rhythm of play defines the Courtier experience."
+      />
+
+      <section className="space-y-4">
+        <p className="text-xs uppercase tracking-[0.4em] text-muted">Membership at Courtier</p>
+        <h1 className="text-3xl font-semibold">Curated access for those who value space and precision</h1>
+        <p className="text-lg text-muted">
           Membership is curated, limited, and for those who value refined environments as much as competitive play.
         </p>
-      </Section>
+      </section>
 
-      <Section className="border-b border-white/10">
-        <div className="grid gap-6 md:grid-cols-3">
-          {tiers.map((tier) => (
-            <Card key={tier.title} title={tier.title} className="backdrop-blur">
-              <div className="space-y-4">
-                <p className="text-xl text-white">{tier.price}</p>
-                <ul className="space-y-2 text-base text-[#CCCCCC]">
-                  {tier.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-2">
-                      <span className="mt-2 h-px w-5 bg-[#C9B37E]"></span>
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </Section>
+      <section className="grid gap-6 md:grid-cols-3">
+        {tiers.map((tier) => (
+          <Card key={tier.title} title={tier.title} className="backdrop-blur">
+            <div className="space-y-4">
+              <p className="text-xl text-white">{tier.price}</p>
+              <ul className="space-y-2 text-base text-muted">
+                {tier.benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-2">
+                    <span className="mt-2 h-px w-5 bg-white/40"></span>
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Card>
+        ))}
+      </section>
 
-      <Section className="border-b border-white/10">
-        <div className="grid gap-10 md:grid-cols-2">
-          <div className="space-y-4 text-lg leading-relaxed text-white/80">
-            <p className="text-sm uppercase tracking-[0.4em] text-white/60">Register Interest</p>
-            <p>
-              Tell us about your interest in COURTIER. Our membership team will follow up with availability and a private
-              preview of the club experience.
-            </p>
-          </div>
-          <MembershipForm />
+      <section className="grid gap-10 md:grid-cols-2" id="register">
+        <div className="space-y-4 text-muted">
+          <p className="text-xs uppercase tracking-[0.35em] text-muted">Register Interest</p>
+          <p>
+            Tell us about your interest in Courtier. Our membership team will follow up with availability and a private preview
+            of the club experience.
+          </p>
         </div>
-      </Section>
-    </div>
+        <MembershipForm />
+      </section>
+    </main>
   );
 }

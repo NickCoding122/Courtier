@@ -1,80 +1,37 @@
 import Image from "next/image";
-
-const courtierImages = {
-  heroCourtAction: { src: "/images/courtier/courtier-hero-court-action.png", width: 1587, height: 656 },
-  heroRacket: { src: "/images/courtier/courtier-hero-racket.png", width: 1670, height: 1039 },
-  indoorCourt: { src: "/images/courtier/courtier-indoor-court.png", width: 1670, height: 1044 },
-  merchBottle: { src: "/images/courtier/courtier-merch-bottle.png", width: 782, height: 834 },
-  merchCap: { src: "/images/courtier/courtier-merch-cap.png", width: 782, height: 835 },
-  merchHoodie: { src: "/images/courtier/courtier-merch-hoodie-roundel.png", width: 785, height: 834 },
-  merchTote: { src: "/images/courtier/courtier-merch-tote.png", width: 776, height: 837 },
-  padelRacketRoundel: { src: "/images/courtier/courtier-padel-racket-roundel.png", width: 782, height: 834 },
-  roundelSignage: { src: "/images/courtier/courtier-roundel-signage.png", width: 776, height: 837 },
-} as const;
+import { cn } from "../lib/utils";
 
 type CourtierImageProps = {
   src: string;
   alt: string;
-  width?: number;
-  height?: number;
-  priority?: boolean;
-  className?: string;
+  width: number;
+  height: number;
   caption?: string;
+  className?: string;
 };
 
-type CourtierImageRecord = typeof courtierImages;
-
-type PresetKey = keyof CourtierImageRecord;
-
-const resolvePreset = (
-  source: string
-): CourtierImageRecord[keyof CourtierImageRecord] | undefined => {
-  return (courtierImages as Record<string, CourtierImageRecord[keyof CourtierImageRecord]>)[source];
-};
-
-export function CourtierImage({
-  src,
-  alt,
-  width,
-  height,
-  priority,
-  className,
-  caption,
-}: CourtierImageProps) {
-  const preset = resolvePreset(src as PresetKey);
-  const computedWidth = width ?? preset?.width ?? 1200;
-  const computedHeight = height ?? preset?.height ?? 800;
-  const sizes = `(max-width: 768px) 90vw, (max-width: 1280px) 60vw, ${computedWidth}px`;
-
+export function CourtierImage({ src, alt, width, height, caption, className }: CourtierImageProps) {
   return (
     <figure
-      className={[
-        "courtier-image-frame",
-        "relative isolate max-w-full rounded-lg border border-[rgba(160,160,160,0.15)] bg-[var(--courtier-off-black)] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.32)]",
+      className={cn(
+        "rounded-lg border border-soft bg-courtier-panel p-4 shadow-sm",
         "transition-transform duration-500 ease-out",
-        className ?? "",
-      ]
-        .filter(Boolean)
-        .join(" ")}
+        className
+      )}
     >
-      <div className="courtier-image-surface relative overflow-hidden rounded-md bg-[var(--courtier-anthracite)]">
+      <div className="overflow-hidden rounded-md">
         <Image
-          src={preset?.src ?? src}
+          src={src}
           alt={alt}
-          width={computedWidth}
-          height={computedHeight}
-          priority={priority}
-          sizes={sizes}
+          width={width}
+          height={height}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 600px"
           className="h-auto w-full animate-courtier-fade-in object-cover"
         />
       </div>
       {caption ? (
-        <figcaption className="courtier-image-caption mt-4 text-[13px] leading-relaxed text-[var(--courtier-ash)]">
-          {caption}
-        </figcaption>
+        <figcaption className="mt-3 text-sm text-muted">{caption}</figcaption>
       ) : null}
     </figure>
   );
 }
-
-export { courtierImages };
