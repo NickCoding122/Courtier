@@ -22,9 +22,9 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--courtier-off-black);
-  color: var(--courtier-white);
-  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  background-color: #0e0e0e;
+  color: #ffffff;
+  font-family: var(--font-aktiv-regular), sans-serif;
   line-height: 1.6;
 }
 
@@ -37,6 +37,6 @@ a {
 }
 
 .courtier-image-caption {
-  font-family: "Aktiv Grotesk", "Aktiv Grotesk Regular", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-aktiv-extended), var(--font-aktiv-regular), "Helvetica Neue", Arial, sans-serif;
   letter-spacing: 0.04em;
 }
