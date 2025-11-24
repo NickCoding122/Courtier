@@ -8,9 +8,20 @@ type CourtierImageProps = {
   height: number;
   caption?: string;
   className?: string;
+  priority?: boolean;
+  quality?: number;
 };
 
-export function CourtierImage({ src, alt, width, height, caption, className }: CourtierImageProps) {
+export function CourtierImage({
+  src,
+  alt,
+  width,
+  height,
+  caption,
+  className,
+  priority,
+  quality = 94,
+}: CourtierImageProps) {
   return (
     <figure
       className={cn(
@@ -25,6 +36,8 @@ export function CourtierImage({ src, alt, width, height, caption, className }: C
           alt={alt}
           width={width}
           height={height}
+          priority={priority}
+          quality={quality}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 600px"
           className="h-auto w-full animate-courtier-fade-in object-cover"
         />

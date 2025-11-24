@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Space_Grotesk } from "next/font/google";
 import "../styles/globals.css";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
-const aktivExtended = localFont({
-  src: [
-    { path: "../public/fonts/aktiv/AktivGroteskExtended-Regular.woff2", weight: "400" },
-    { path: "../public/fonts/aktiv/AktivGroteskExtended-Bold.woff2", weight: "700" },
-  ],
+const aktivExtended = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "700"],
   variable: "--font-aktiv-extended",
+  display: "swap",
 });
 
-const aktivRegular = localFont({
-  src: [
-    { path: "../public/fonts/aktiv/AktivGrotesk-Regular.woff2", weight: "400" },
-  ],
+const aktivRegular = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500"],
   variable: "--font-aktiv-regular",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -39,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${aktivExtended.variable} ${aktivRegular.variable}`}>
-      <body className="bg-[#0E0E0E] text-white antialiased">
+      <body className={`${aktivRegular.className} bg-[#0E0E0E] text-white antialiased`}>
         <Navbar />
         <main>{children}</main>
         <Footer />
