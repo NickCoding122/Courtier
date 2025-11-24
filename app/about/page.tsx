@@ -1,4 +1,5 @@
 import { Card } from "../../components/Card";
+import { CourtierImage, courtierImages } from "../../components/CourtierImage";
 import { Section } from "../../components/Section";
 
 const principles = ["Performance First", "Design-Led Spaces", "Curated Community"];
@@ -26,6 +27,18 @@ export default function AboutPage() {
             COURTIER was born from equal parts obsession with padel and a desire for environments that feel as considered as
             the sport itself. We set out to design a club where energy, architecture, and service are choreographed.
           </p>
+        </div>
+      </Section>
+
+      <Section className="border-b border-white/10">
+        <div className="mx-auto max-w-5xl">
+          <CourtierImage
+            src={courtierImages.indoorCourt.src}
+            width={courtierImages.indoorCourt.width}
+            height={courtierImages.indoorCourt.height}
+            alt="Atmospheric indoor COURTIER court"
+            caption="Monochrome interiors with deliberate negative space and gallery lighting."
+          />
         </div>
       </Section>
 

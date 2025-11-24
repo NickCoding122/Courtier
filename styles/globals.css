@@ -4,6 +4,11 @@
 
 :root {
   color-scheme: dark;
+  --courtier-off-black: #0e0e0e;
+  --courtier-anthracite: #222222;
+  --courtier-ash: #a0a0a0;
+  --courtier-silver: #c4c4c4;
+  --courtier-white: #ffffff;
 }
 
 * {
@@ -17,10 +22,19 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--courtier-off-black);
+  color: var(--courtier-white);
 }
 
 a {
   text-decoration: none;
+}
+
+.courtier-image-frame {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+.courtier-image-caption {
+  font-family: "Aktiv Grotesk", "Aktiv Grotesk Regular", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.04em;
 }
