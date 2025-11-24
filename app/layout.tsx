@@ -6,15 +6,15 @@ import { Footer } from "../components/Footer";
 
 const aktivExtended = localFont({
   src: [
-    { path: "../public/fonts/aktiv-grotesk/AktivGroteskExtended-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../public/fonts/aktiv-grotesk/AktivGroteskExtended-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/aktiv/AktivGroteskExtended-Regular.woff2", weight: "400" },
+    { path: "../public/fonts/aktiv/AktivGroteskExtended-Bold.woff2", weight: "700" },
   ],
   variable: "--font-aktiv-extended",
 });
 
 const aktivRegular = localFont({
   src: [
-    { path: "../public/fonts/aktiv-grotesk/AktivGrotesk-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/aktiv/AktivGrotesk-Regular.woff2", weight: "400" },
   ],
   variable: "--font-aktiv-regular",
 });
@@ -39,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${aktivExtended.variable} ${aktivRegular.variable}`}>
-      <body className="bg-courtier text-white antialiased">
+      <body className="bg-[#0E0E0E] text-white antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />
