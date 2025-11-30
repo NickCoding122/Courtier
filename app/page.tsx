@@ -9,16 +9,8 @@ export default function Home() {
       }}
     >
       <div style={{ textAlign: "center" }}>
-        <div style={{ fontSize: "56px" }}>COURTIER</div>
-        <div
-          style={{
-            marginTop: "0.5rem",
-            fontSize: "12px",
-            fontWeight: 300,
-          }}
-        >
-          A private indoor padel & leisure club.
-        </div>
+        <h1 className="logo-hero">COURTIER</h1>
+        <p className="hero-subtitle">A private indoor padel & leisure club.</p>
       </div>
     </main>
   );
