@@ -94,6 +94,19 @@ footer {
   text-transform: uppercase;
 }
 
+.nav-link-active {
+  opacity: 1;
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: "";
+  display: block;
+  margin-top: 0.35rem;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 .nav-link:hover {
   opacity: 1;
 }
