@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import "./globals.css";
+
+const aktivEx = localFont({
+  src: [
+    {
+      path: "../public/fonts/aktiv-grotesk-extended/AktivGroteskEx-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={aktivEx.className}>
         <Navbar />
         <div className="page-container">
           <main>{children}</main>
