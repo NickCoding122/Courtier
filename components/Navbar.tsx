@@ -1,0 +1,25 @@
+import Link from "next/link";
+import React from "react";
+
+const Navbar: React.FC = () => {
+  return (
+    <header className="navbar">
+      <div className="page-container navbar-inner">
+        <div className="logo">COURTIER</div>
+        <nav className="nav-links" aria-label="Primary Navigation">
+          <Link href="/" className="nav-link">
+            Home
+          </Link>
+          <Link href="/join-us" className="nav-link">
+            Join Us
+          </Link>
+          <Link href="/founders" className="nav-link">
+            Founders
+          </Link>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;
