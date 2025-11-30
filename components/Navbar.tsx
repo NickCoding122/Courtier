@@ -5,7 +5,9 @@ const Navbar: React.FC = () => {
   return (
     <header className="navbar">
       <div className="page-container navbar-inner">
-        <div className="logo">COURTIER</div>
+        <div>
+          <span className="logo-nav">COURTIER</span>
+        </div>
         <nav className="nav-links" aria-label="Primary Navigation">
           <Link href="/" className="nav-link">
             Home
