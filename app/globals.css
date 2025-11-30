@@ -37,9 +37,15 @@ a:focus-visible {
 }
 
 .navbar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.25rem 0;
   background: #000000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-inner {
@@ -57,13 +63,21 @@ a:focus-visible {
 
 .nav-links {
   display: flex;
-  gap: 1.25rem;
+  gap: 2rem;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .nav-link {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  opacity: 1;
 }
 
 .footer {
