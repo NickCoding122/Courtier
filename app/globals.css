@@ -14,6 +14,14 @@ body {
   color: #ffffff;
 }
 
+.home-hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -27,6 +35,16 @@ a:hover {
 a:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  text-align: center;
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
 
 .page-container {

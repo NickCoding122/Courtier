@@ -31,7 +31,7 @@ export default function JoinUs() {
           We are building our first location in London.
         </p>
         <a
-          href="mailto:hello@courtier.club?subject=Courtier%20-%20Register%20Interest"
+          href="mailto:inquiry@courtierclub.com?subject=Courtier%20-%20Register%20Interest"
           style={{
             display: "inline-block",
             padding: "0.75rem 1.25rem",
