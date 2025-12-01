@@ -26,10 +26,10 @@ body {
 /* Mobile-specific adjustments */
 @media (max-width: 640px) {
   .home-hero {
-    min-height: calc(100svh - 60px); /* accounts for navbar + iOS safe-area */
-    background-size: contain;        /* prevents cropping */
-    background-position: top center; /* shifts image down naturally */
-    background-color: #000;          /* fill black behind letterboxing */
+    background-image: url("/background_test_mobile.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100svh;
   }
 }
 
