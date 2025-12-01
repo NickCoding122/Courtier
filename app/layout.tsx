@@ -18,10 +18,14 @@ const aktivEx = localFont({
 export const metadata: Metadata = {
   title: "COURTIER",
   description: "A private indoor padel & leisure club in London.",
+  manifest: "/site.webmanifest",
   icons: {
-    icon: "/courtier_flavicon.png",
-    shortcut: "/courtier_flavicon.png",
-    apple: "/courtier_flavicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
