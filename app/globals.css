@@ -225,3 +225,75 @@ footer {
     padding: 0 1.5rem;
   }
 }
+
+.founders-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.founders-inner {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.founders-title {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.founders-intro {
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.founder-card {
+  text-align: left;
+  padding: 1.5rem 1.75rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.founder-name {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.founder-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .founders-page {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .founders-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .founder-card {
+    padding: 1.3rem 1.4rem;
+  }
+}
