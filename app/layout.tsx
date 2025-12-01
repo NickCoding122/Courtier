@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   title: "COURTIER",
   description: "A private indoor padel & leisure club in London.",
   icons: {
-    icon: "/courtier_logo.png",
-    shortcut: "/courtier_logo.png",
-    apple: "/courtier_logo.png",
+    icon: "/courtier_flavicon.png",
+    shortcut: "/courtier_flavicon.png",
+    apple: "/courtier_flavicon.png",
   },
 };
 
