@@ -16,11 +16,21 @@ body {
 
 .home-hero {
   width: 100%;
-  height: 100vh;
+  min-height: 100svh;
   background-image: url("/test_background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 640px) {
+  .home-hero {
+    min-height: calc(100svh - 60px); /* accounts for navbar + iOS safe-area */
+    background-size: contain;        /* prevents cropping */
+    background-position: top center; /* shifts image down naturally */
+    background-color: #000;          /* fill black behind letterboxing */
+  }
 }
 
 a {
