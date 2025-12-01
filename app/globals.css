@@ -167,16 +167,6 @@ footer {
   letter-spacing: 0.08em;
 }
 
-.join-description {
-  max-width: 560px;
-  margin: 0 auto 2rem auto;
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: 0.85;
-  letter-spacing: 0.01em;
-  text-align: center;
-}
-
 @media (max-width: 640px) {
   .navbar-container {
     display: flex;
@@ -214,15 +204,70 @@ footer {
     padding: 0 1.5rem;
   }
 
-  .join-description {
-    font-size: 0.95rem;
-    padding: 0 1rem;
-    line-height: 1.55;
-  }
-
   .home-hero {
     min-height: calc(100vh - 80px);
     padding: 0 1.5rem;
+  }
+}
+
+.join-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.join-inner {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.join-title {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.join-text {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  opacity: 0.85;
+  margin-bottom: 1.4rem;
+}
+
+.join-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.9rem 2.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  opacity: 0.95;
+}
+
+.join-button:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 640px) {
+  .join-page {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .join-text {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    margin-bottom: 1.1rem;
+  }
+
+  .join-button {
+    width: 100%;
   }
 }
 
