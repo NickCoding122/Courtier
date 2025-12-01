@@ -18,17 +18,16 @@ export default function JoinUs() {
         >
           Join Us
         </h1>
-        <p
-          style={{
-            marginTop: "0.75rem",
-            marginBottom: "1.5rem",
-            fontSize: "16px",
-            fontWeight: 300,
-            lineHeight: 1.5,
-          }}
-        >
-          Courtier is a private, invitation-led indoor padel & wellness club.
-          We are building our first location in London.
+        <p className="join-description">
+          We’re building Courtier because indoor sport deserves better than
+          recycled warehouses and temporary structures.
+          <br />
+          <br />
+          Our goal is simple: create a purpose-built club with the height, space
+          and atmosphere that actually elevates the game — not just houses it.
+          <br />
+          <br />
+          Our first flagship opens in 2026 with a limited founding membership.
         </p>
         <a
           href="mailto:info@courtierclub.com?subject=Courtier%20-%20Register%20Interest"
