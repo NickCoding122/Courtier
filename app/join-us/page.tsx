@@ -7,13 +7,13 @@ export default function JoinUsPage() {
         <h1 className="join-title">Join Us</h1>
 
         <p className="join-text">
-          We’re building Courtier because indoor sport deserves better than recycled warehouses and temporary structures.
+          We are building Courtier to create the new premium for sports and wellness, delivering best-in-class facilities and service.
         </p>
         <p className="join-text">
           Our goal is simple: create a purpose-built club with the height, space and atmosphere that actually elevates the game — not just houses it.
         </p>
         <p className="join-text">
-          Our first flagship opens in 2026 with a limited founding membership.
+          Our first flagship venue is set to open in 2026, with limited founding membership.
         </p>
 
         <Link
