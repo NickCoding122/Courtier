@@ -16,21 +16,11 @@ body {
 
 .home-hero {
   width: 100%;
-  min-height: 100svh;
-  background-image: url("/test_background.png");
+  min-height: 100vh;
+  background-image: url("/images/courtier_court_image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 640px) {
-  .home-hero {
-    background-image: url("/background_test_mobile.png");
-    background-size: cover;
-    background-position: center;
-    min-height: 100svh;
-  }
 }
 
 a {
