@@ -13,7 +13,7 @@ export default function FoundersPage() {
             <h2 className="founder-name">Louis Hart</h2>
             <p className="founder-text">
               Real estate professional with strong institutional relationships, and a track record
-              navigating acquisitions, capital markets and development strategy.
+              navigating acquisitions, capital markets and development.
             </p>
           </div>
 
